@@ -1,0 +1,22 @@
+{
+  "name": "buger-eats",
+  "version": "1.0.0",
+  "description": "Testando aplicação buger-eats",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diog0s/buger-eats.git"
+  },
+  "author": "Diogo Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diog0s/buger-eats/issues"
+  },
+  "homepage": "https://github.com/diog0s/buger-eats#readme",
+  "devDependencies": {
+    "cypress": "^9.4.1"
+  }
+}
