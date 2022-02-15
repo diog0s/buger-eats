@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/diog0s/buger-eats#readme",
   "devDependencies": {
-    "cypress": "^9.4.1"
+    "cypress": "^9.4.1",
+    "cypress-file-upload": "^5.0.8"
   }
 }
