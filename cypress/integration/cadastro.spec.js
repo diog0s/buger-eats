@@ -24,7 +24,7 @@ describe('Cadastro', () => {
             this.deliver = massaTeste
         })
     })
-    it('Usuário deve se tornar um entregador', function() {
+    it.skip('Usuário deve se tornar um entregador', function() {
 
         signup.go()
         signup.fillForm(this.deliver.signup)
@@ -33,11 +33,31 @@ describe('Cadastro', () => {
         signup.modalContentShouldBeSucess(message)
     });
 
-    it('CPF inválido', function() {
+    it.skip('CPF inválido', function() {
 
         signup.go()
         signup.fillForm(this.deliver.cpfInv)
         signup.submit()
         signup.modalContentShouldBeCPFError('Oops! CPF inválido')
+    });
+
+    it.skip('Email inválido', function() {
+        signup.go()
+        signup.fillForm(this.deliver.emailInv)
+        signup.submit()
+        signup.modalContentShouldBeCPFError('Oops! Email com formato inválido.')
+    });
+
+    it('Campos obrigatórios', function() {
+        signup.go()
+        signup.submit()
+        signup.modalContentShouldBe('É necessário informar o nome')
+        signup.modalContentShouldBe('É necessário informar o CPF')
+        signup.modalContentShouldBe('É necessário informar o email')
+        signup.modalContentShouldBe('É necessário informar o CEP')
+        signup.modalContentShouldBe('É necessário informar o número do endereço')
+        signup.modalContentShouldBe('Selecione o método de entrega')
+        signup.modalContentShouldBe('Adicione uma foto da sua CNH')
+
     });
 })

@@ -7,7 +7,7 @@ class SignUpPage{
     }
 
     fillForm(deliver){
-        cy.get('input[name="name"]').type(deliver.name)
+        cy.get('input[name="fullName"]').type(deliver.name)
         cy.get('input[name="email"]').type(deliver.email)
         cy.get('input[name="cpf"]').type(deliver.cpf)
         cy.get('input[name="whatsapp"]').type(deliver.whatsapp)
@@ -33,7 +33,13 @@ class SignUpPage{
     }
 
     modalContentShouldBeCPFError(message){
-        cy.get('div[class="field"] span[class="alert-error"]').should('have.text', message)
+        cy.get('span[class="alert-error"]').should('have.text', message)
+        //cy.contains('span[class="alert-error"]', message).should('be.visible')
+    }
+
+    modalContentShouldBe(message){
+        //cy.get('span[class="alert-error"]').should('have.text', message)
+        cy.contains('span[class="alert-error"]', message).should('be.visible')
     }
 
     modalContentShouldBeSucess(message){

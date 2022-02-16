@@ -38,6 +38,26 @@
                 "van_car": "Van/Carro"
             },
             "cnh": "cnh-digital.jpg"
-    }
+    },
+    "emailInv":{
+        "name": "Diogo Santos",
+            "cpf": "00000000020",
+            "email": "diogo.com.br",
+            "whatsapp": "8388888888",
+            "address": {
+                "postalcode": "53090000",
+                "street": "Rua Rosa de Oliveira",
+                "number": "000",
+                "details": "Esquina com a Av. Cypress",
+                "district": "Rio Doce",
+                "city_state": "Olinda/PE"
+            },
+            "delivery_method": {
+                "motocycle": "Moto",
+                "bike": "Bicicleta",
+                "van_car": "Van/Carro"
+            },
+            "cnh": "cnh-digital.jpg"
+        }
 
 }
