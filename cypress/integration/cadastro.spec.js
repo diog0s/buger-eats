@@ -1,6 +1,6 @@
 import SignUpPage from '../pages/SignUpPage'
 
-describe('Cadastro', ()=>{
+describe('Cadastro', () => {
     // before( ()=>{
     //     cy.log('Tudo aqui é executado uma única vez ANTES de TODOS os casos de testes');
     // })
@@ -17,60 +17,26 @@ describe('Cadastro', ()=>{
     //     cy.log('Tudo aqui é executado SEMPRE DEPOIS de cada caso de teste');
     // })
 
-    it.skip('Usuário deve se tornar um entregador', () => {
-        var deliver = {
-            name: 'Diogo',
-            cpf: '00011122233',
-            email: 'diogo@gmail.com',
-            whatsapp: '83999999999',
-            address: {
-                postalcode: '53090000',
-                street: 'Rua Rosa de Oliveira',
-                number: '000',
-                details: 'Esquina com a Av. Cypress',
-                district: 'Rio Doce',
-                city_state: 'Olinda/PE'
-            },
-            delivery_method: {
-                motocycle: 'Moto',
-                bike: 'Bicicleta',
-                van_car: 'Van/Carro'
-            },
-            cnh: 'cnh-digital.jpg'
-        }
-        var signup = new SignUpPage()
+    var signup = new SignUpPage()
+
+    beforeEach(function() {
+        cy.fixture('deliver').then( (massaTeste)=>{
+            this.deliver = massaTeste
+        })
+    })
+    it('Usuário deve se tornar um entregador', function() {
+
         signup.go()
-        signup.fillForm(deliver)
+        signup.fillForm(this.deliver.signup)
         signup.submit()
         const message = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
         signup.modalContentShouldBeSucess(message)
     });
 
-    it('CPF inválido', () => {
-        var deliver = {
-            name: 'Diogo',
-            cpf: '000111222MM',
-            email: 'diogo@gmail.com',
-            whatsapp: '83999999999',
-            address: {
-                postalcode: '53090000',
-                street: 'Rua Rosa de Oliveira',
-                number: '000',
-                details: 'Esquina com a Av. Cypress',
-                district: 'Rio Doce',
-                city_state: 'Olinda/PE'
-            },
-            delivery_method: {
-                motocycle: 'Moto',
-                bike: 'Bicicleta',
-                van_car: 'Van/Carro'
-            },
-            cnh: 'cnh-digital.jpg'
-        }
+    it('CPF inválido', function() {
 
-        var signup = new SignUpPage()
         signup.go()
-        signup.fillForm(deliver)
+        signup.fillForm(this.deliver.cpfInv)
         signup.submit()
         signup.modalContentShouldBeCPFError('Oops! CPF inválido')
     });

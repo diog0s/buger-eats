@@ -1,0 +1,43 @@
+{
+    "signup":{
+        "name": "Diogo",
+            "cpf": "00011122233",
+            "email": "diogo@gmail.com",
+            "whatsapp": "83999999999",
+            "address": {
+                "postalcode": "53090000",
+                "street": "Rua Rosa de Oliveira",
+                "number": "000",
+                "details": "Esquina com a Av. Cypress",
+                "district": "Rio Doce",
+                "city_state": "Olinda/PE"
+            },
+            "delivery_method": {
+                "motocycle": "Moto",
+                "bike": "Bicicleta",
+                "van_car": "Van/Carro"
+            },
+            "cnh": "cnh-digital.jpg"
+    },
+    "cpfInv":{
+        "name": "Diogo Santos",
+            "cpf": "AAA1KF22233",
+            "email": "diogo@hotmail.com",
+            "whatsapp": "8388888888",
+            "address": {
+                "postalcode": "53090000",
+                "street": "Rua Rosa de Oliveira",
+                "number": "000",
+                "details": "Esquina com a Av. Cypress",
+                "district": "Rio Doce",
+                "city_state": "Olinda/PE"
+            },
+            "delivery_method": {
+                "motocycle": "Moto",
+                "bike": "Bicicleta",
+                "van_car": "Van/Carro"
+            },
+            "cnh": "cnh-digital.jpg"
+    }
+
+}
