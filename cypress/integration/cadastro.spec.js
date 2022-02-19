@@ -24,7 +24,7 @@ describe('Cadastro', () => {
             this.deliver = massaTeste
         })
     })
-    it.skip('Usuário deve se tornar um entregador', function() {
+    it('Usuário deve se tornar um entregador', function() {
 
         signup.go()
         signup.fillForm(this.deliver.signup)
@@ -33,7 +33,7 @@ describe('Cadastro', () => {
         signup.modalContentShouldBeSucess(message)
     });
 
-    it.skip('CPF inválido', function() {
+    it('CPF inválido', function() {
 
         signup.go()
         signup.fillForm(this.deliver.cpfInv)
@@ -41,7 +41,7 @@ describe('Cadastro', () => {
         signup.modalContentShouldBeCPFError('Oops! CPF inválido')
     });
 
-    it.skip('Email inválido', function() {
+    it('Email inválido', function() {
         signup.go()
         signup.fillForm(this.deliver.emailInv)
         signup.submit()
